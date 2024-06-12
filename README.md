@@ -12,7 +12,7 @@
 ## Modified version of A1111-SD-WebUI-DTG for config-presets
 
 ### Changes.
-The model I use most often, [BAXLv3](https://civitai.com/models/212253/baxl-or-blue-archive-flat-celluloid-style-fine-tune-or-kohaku-d-and-animagine) The recommended configuration for -xl-v3) uses dtg and I wanted to be able to save the configuration and recall it at any time.
+The recommended settings for [BAXLv3](https://civitai.com/models/212253/baxl-or-blue-archive-flat-celluloid-style-fine-tune-or-kohaku-d-and-animagine-xl-v3), the model I use most often, use dtg and I wanted to be able to save the settings and recall them at any time.
 
 The [config-presets](https://github.com/Zyin055/Config-Presets) will save the settings where Gradio's elem_id is present, so I gave it to them.
 
