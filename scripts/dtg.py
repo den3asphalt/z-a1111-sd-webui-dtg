@@ -75,6 +75,8 @@ RECOMMEND_MARKDOWN = """
     - Top K: 50 ~ 90
 """
 
+CONFIG_PREFIX="DTG"
+
 
 def on_process_timing_dropdown_changed(timing: str):
     info = ""
@@ -112,7 +114,7 @@ class DTGScript(scripts.Script):
                 with gr.Row():
                     with gr.Column(scale=1):
                         enabled_check = gr.Checkbox(
-                            label="Enabled", value=False, min_width=20
+                            label="Enabled", value=False, min_width=20, elem_id=CONFIG_PREFIX + "_enabled"
                         )
                         read_orig_prompt_btn = gr.Button(
                             size="sm",
@@ -143,17 +145,20 @@ class DTGScript(scripts.Script):
                     label="Total tag length",
                     choices=list(TOTAL_TAG_LENGTH.values()),
                     value=TOTAL_TAG_LENGTH["LONG"],
+                    elem_id=CONFIG_PREFIX + "_tag_length"
                 )
                 ban_tags_textbox = gr.Textbox(
                     label="Ban tags",
                     info="Separate with comma. Regex supported.",
                     value="",
                     placeholder="umbrella, official.*, .*text, ...",
+                    elem_id=CONFIG_PREFIX + "_ban_tags"
                 )
                 format_textarea = gr.TextArea(
                     label="Prompt Format",
                     info="The format you want to apply to final prompt",
                     value=DEFAULT_FORMAT,
+                    elem_id=CONFIG_PREFIX + "_format"
                 )
 
                 with gr.Group():
@@ -165,6 +170,7 @@ class DTGScript(scripts.Script):
                             step=1,
                             scale=4,
                             value=-1,
+                            elem_id=CONFIG_PREFIX + "_seed"
                         )
                         seed_random_btn = gr.Button(value="Randomize")
                         seed_shuffle_btn = gr.Button(value="Shuffle")
@@ -180,6 +186,7 @@ class DTGScript(scripts.Script):
                         label="Upsampling timing",
                         choices=list(PROCESSING_TIMING.values()),
                         value=PROCESSING_TIMING["AFTER"],
+                        elem_id=CONFIG_PREFIX + "_timing"
                     )
 
                     process_timing_md = gr.Markdown(
@@ -206,9 +213,10 @@ class DTGScript(scripts.Script):
                             )
                         ],
                         value=models.model_list[0],
+                        elem_id=CONFIG_PREFIX + "_model"
                     )
-                    gguf_use_cpu = gr.Checkbox(label="Use CPU (GGUF)")
-                    no_formatting = gr.Checkbox(label="No formatting", value=False)
+                    gguf_use_cpu = gr.Checkbox(label="Use CPU (GGUF)", elem_id=CONFIG_PREFIX + "_gguf_cpu")
+                    no_formatting = gr.Checkbox(label="No formatting", value=False, elem_id=CONFIG_PREFIX + "_no_formatting")
                     temperature_slider = gr.Slider(
                         label="Temperature",
                         info="← less random | more random →",
@@ -216,6 +224,7 @@ class DTGScript(scripts.Script):
                         minimum=0.1,
                         step=0.05,
                         value=1.35,
+                        elem_id=CONFIG_PREFIX + "_temperature"
                     )
                     top_p_slider = gr.Slider(
                         label="Top-p",
@@ -224,6 +233,7 @@ class DTGScript(scripts.Script):
                         minimum=0,
                         step=0.05,
                         value=0.95,
+                        elem_id=CONFIG_PREFIX + "_top_p"
                     )
                     top_k_slider = gr.Slider(
                         label="Top-k",
@@ -232,6 +242,7 @@ class DTGScript(scripts.Script):
                         minimum=0,
                         step=1,
                         value=100,
+                        elem_id=CONFIG_PREFIX + "_top_k"
                     )
 
         self.infotext_fields = [
