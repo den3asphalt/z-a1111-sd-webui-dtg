@@ -1,3 +1,25 @@
+## A1111-SD-WebUI-DTGのconfig-presets用改変版
+
+### 変更点
+私がよく使うモデルの[BAXLv3](https://civitai.com/models/212253/baxl-or-blue-archive-flat-celluloid-style-fine-tune-or-kohaku-d-and-animagine-xl-v3)の推奨設定ではdtgが使われており、設定を保存していつでも呼び出せるようにしたかった。
+
+[config-presets](https://github.com/Zyin055/Config-Presets)では、Gradioのelem_idが存在する設定を保存してくれるため、これを付与した。
+
+初心者だから何か間違えていたらごめんなさい。
+
+# English translation
+
+## Modified version of A1111-SD-WebUI-DTG for config-presets
+
+### Changes.
+The model I use most often, [BAXLv3](https://civitai.com/models/212253/baxl-or-blue-archive-flat-celluloid-style-fine-tune-or-kohaku-d-and-animagine The recommended configuration for -xl-v3) uses dtg and I wanted to be able to save the configuration and recall it at any time.
+
+The [config-presets](https://github.com/Zyin055/Config-Presets) will save the settings where Gradio's elem_id is present, so I gave it to them.
+
+I'm a newbie, so sorry if I'm doing something wrong.
+
+# Original text below
+
 # A1111-SD-WebUI-DTG
 
 A sd-webui extension for utilizing DanTagGen to "upsample prompts".
