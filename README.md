@@ -7,16 +7,79 @@
 
 初心者だから何か間違えていたらごめんなさい。
 
+### 追加したID一覧
+```
+DTG_enabled
+DTG_tag_length
+DTG_ban_tags
+DTG_format
+DTG_seed
+DTG_timing
+DTG_model
+DTG_gguf_cpu
+DTG_no_formatting
+DTG_temperature
+DTG_top_p
+DTG_top_k
+```
+
+### 使い方
+```stable-diffusion-webui\extensions\Config-Presets\config-txt2img-custom-tracked-components.txt```
+に上記のIDを追加する。
+
+BAXLv3を使うときは、推奨設定で述べられているように、以下の項目を設定する。
+
+```
+DTG_enabled
+DTG_tag_length
+DTG_ban_tags
+DTG_temperature
+```
+
+<hr>
+
 # English translation
 
 ## Modified version of A1111-SD-WebUI-DTG for config-presets
 
 ### Changes.
-The recommended settings for [BAXLv3](https://civitai.com/models/212253/baxl-or-blue-archive-flat-celluloid-style-fine-tune-or-kohaku-d-and-animagine-xl-v3), the model I use most often, use dtg and I wanted to be able to save the settings and recall them at any time.
+The recommended configuration for [BAXLv3](https://civitai.com/models/212253/baxl-or-blue-archive-flat-celluloid-style-fine-tune-or-kohaku-d-and-animagine-xl-v3), the model I use most often, uses dtg and I wanted to be able to save the configuration and recall it at any time.
 
-The [config-presets](https://github.com/Zyin055/Config-Presets) will save the settings where Gradio's elem_id is present, so I gave it to them.
+I gave this to [config-presets](https://github.com/Zyin055/Config-Presets) because it saves the settings where Gradio's elem_id exists.
 
-I'm a newbie, so sorry if I'm doing something wrong.
+I'm a beginner, so sorry if I got something wrong.
+I am using machine translation.
+
+### List of IDs added
+```
+DTG_enabled
+DTG_tag_length
+DTG_ban_tags
+DTG_format
+DTG_seed
+DTG_timing
+DTG_model
+DTG_gguf_cpu
+DTG_no_formatting
+DTG_temperature
+DTG_top_p
+DTG_top_k
+```
+
+### Usage
+Add the necessary items from the above IDs to ``stable-diffusion-webui\extensions\Config-Presets\config-txt2img-custom-tracked-components.txt``.
+
+When using BAXLv3, set the following as described in the recommended settings
+
+```
+DTG_enabled
+DTG_tag_length
+DTG_ban_tags
+DTG_temperature
+DTG_temperature
+```
+
+<hr>
 
 # Original text below
 
